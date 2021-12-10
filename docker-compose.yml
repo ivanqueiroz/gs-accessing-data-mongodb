@@ -1,0 +1,15 @@
+services:
+  mongo:
+    image: mongo
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: abc123
+    ports:
+      - "27017:27017"
+    volumes:
+      - /home/ivanqueiroz/Desenvolvimento/Docker/Volumes/MongoDB:/data/db
+    networks:
+      - mongo-compose-network
+networks:
+  mongo-compose-network:
+    driver: bridge
